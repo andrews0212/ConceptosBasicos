@@ -2,8 +2,15 @@ package Juego;
 
 import javax.swing.JFrame;
 
-public class ventana {
+import java.awt.BorderLayout;
+import java.awt.Canvas;
+public class ventana extends Canvas{
 
+    static JFrame v1;
+    static final String titulo = "Juego";
+    static final int horizontal = 800;
+    static final int vertical = 600;
+    
     /*
      * Crear ventana recibiendo por parametros
      * 
@@ -15,8 +22,8 @@ public class ventana {
      * 
      */
     public static void getVentana(String Nombre, int horizontal, int vertical) {
-        JFrame v1 = new JFrame();
-        // definiremos el ta
+        
+        v1 = new JFrame(Nombre);
         v1.setSize(horizontal, vertical); 
         v1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         v1.setResizable(false);
@@ -25,13 +32,6 @@ public class ventana {
     }
 
     public static void main(String[] args) {
-        String titulo;
-        int horizontal;
-        int vertical;
-        titulo = "Juego";
-        horizontal = 800;
-        vertical = 600;
-        ventana v1 = new ventana();
-        v1.getVentana(titulo, horizontal, vertical);
+        getVentana(titulo, horizontal, vertical);
     }
 }
