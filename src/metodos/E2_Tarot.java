@@ -56,8 +56,10 @@ public class E2_Tarot {
             while (suma > 9) {
                 suma = getSumaDigitos(suma);
             }
+             return suma;
         }
-        return suma;
+        return -1;
+       
     }
     public static void main(String[] args){
         System.out.println(tarot(2,12,2002));
