@@ -1,6 +1,7 @@
 package Cadenas;
 
 import java.util.Scanner;
+import java.util.concurrent.CyclicBarrier;
 
 public class E4d1_cadenasDatos {
 
@@ -97,9 +98,8 @@ public class E4d1_cadenasDatos {
      * Este metodo te dice si una palabra es palindroma o no 
      * @param cadena aqui colocamos la cadena que queremos comprobar que es palindroma
      * @return devuelve true si cadena y la cadena revirtida son iguales
-     *
-     * 
      */
+
     static boolean getPalindromo(String cadena){
         String cadenaN;
         cadenaN = "";
@@ -113,6 +113,25 @@ public class E4d1_cadenasDatos {
         }
         
     }
+    static boolean getPalindromoP(String cadena){
+        boolean Palindromo;
+        Palindromo = true;
+        cadena.toLowerCase();
+        for (int d = 0, i = cadena.length() ; d < i; d++, i--) {
+            while(!Character.isLetter(cadena.charAt(i))){
+                i++;
+            }
+               while(!Character.isLetter(cadena.charAt(d))){
+                d--;
+            }
+            if (cadena.charAt(i) != cadena.charAt(d)){
+                Palindromo = false;
+             }
+        }
+        return Palindromo;
+    }
+
+
     public static void main(String[] args) {
 
         Scanner teclado = new Scanner(System.in);
