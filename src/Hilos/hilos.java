@@ -10,8 +10,6 @@ public class hilos extends Thread {
             // TODO: handle exception
         }
     }
-    
-    
     public static void main(String[] args) {
         hilos h1 = new hilos();
         hilo2 h2 = new hilo2();
