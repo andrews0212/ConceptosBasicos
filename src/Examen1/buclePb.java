@@ -2,15 +2,13 @@ package Examen1;
 
 public class buclePb {
     public static void main(String[] args) {
-        int n = 5;
-        for (int i = n; i > 0; i--){
-            int j = i;
-            while (j++ <= n){
-                System.out.print("*");
-            }
-            if (i > 1) System.out.print("-");
-        }
-            
+    int x = 1;
+    int y = 1;
+
+    while (x < 5){
+        y += ++x;
+    }
+            System.out.println("" + y + x);
         
     }
 }

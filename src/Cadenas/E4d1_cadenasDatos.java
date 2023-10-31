@@ -85,13 +85,45 @@ public class E4d1_cadenasDatos {
     static boolean getCadenaIgual(String cadena1, String cadena2){
         return (cadena1.equals(cadena2));
     }
-    static Integer getIntString(String cadena){
-        if (cadena.matches("[a-zA-Z]+")){
-            System.out.println("No se puede convertir porque tiene caracteres");
-        } else {
-            return Integer.parseInt(cadena);
+    
+    static int getIntHexa(String cadena){
+        if(cadena.matches("[^a-f0-9]")){
+            return 0;
         }
-        return null;
+        String numero = new String();
+        numero = "";
+        cadena = cadena.toLowerCase();
+        for (int i = 0; i <= cadena.length() - 1; i++) {
+            if (cadena.charAt(i) == 'a'){
+               numero += "10";
+            } else if (cadena.charAt(i) == 'b'){
+               numero += "11";
+            } else if (cadena.charAt(i) == 'c'){
+               numero += "12";
+            } else if (cadena.charAt(i) == 'd'){
+               numero += "13";
+            } else if (cadena.charAt(i) == 'e'){
+               numero += "14";
+            } else if (cadena.charAt(i) == 'f'){
+               numero += "15";
+            } else {
+                numero += cadena.charAt(i);
+            }
+        }
+        return Integer.parseInt(numero);
+        
+        }
+
+    
+    
+    static int getIntString(String cadena){
+        
+        String nuevaCadena = cadena.replaceAll("[^0-9]", ""); // Eliminar todo excepto números
+        if (nuevaCadena.isEmpty()) {
+            return 0; // Devolver 0 si la cadena no contiene números
+        }
+        return Integer.parseInt(nuevaCadena);
+        
     }
 
     /*
@@ -137,6 +169,6 @@ public class E4d1_cadenasDatos {
         Scanner teclado = new Scanner(System.in);
         System.out.println("dime la cadena de caracter");
         String caracteres = teclado.nextLine();
-        System.out.println(getPalindromo(caracteres));
+        System.out.println(getIntHexa(caracteres));
     }
 }
