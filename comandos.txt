@@ -1,0 +1,4 @@
+terminal control + ñ
+ir a la linea control + g
+control fn f12
+control mayus o

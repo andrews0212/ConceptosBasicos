@@ -1,11 +1,13 @@
 package Array;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class E00_AlumnosEdades {
     static Scanner teclado = new Scanner(System.in);
     static int edad[]; // variable global propiedad estaticas
+    static String nombreAlumno[];
     static int nAlumno;
     static Random r = new Random();
     /*
@@ -17,7 +19,10 @@ public class E00_AlumnosEdades {
     static void carga(int n){
         nAlumno = n;
         edad = new int[n];
+        nombreAlumno = new String[n];
         for (int i = 0; i < edad.length; i++) {
+            System.out.println("Dime el nombre del alumno " + i);
+            nombreAlumno[i] = teclado.nextLine();
             System.out.printf(" Edad alumno %d\n" , i);
             edad[i] = r.nextInt(10, 20); // va almacenando edad de alumno en el array 
             // si creas un objeto Random de esta forma hace que adicine un numero del 10 al 20
@@ -57,6 +62,7 @@ public class E00_AlumnosEdades {
         return mayor;
 
     }*/
+    
 
     static int getMayor(){
         int mayorEdad;
@@ -72,12 +78,24 @@ public class E00_AlumnosEdades {
         }
         return mayorAlumno;
     }
+    static int getEdad(String nombre){
+        for (int i = 0; i < nombreAlumno.length; i++) {
+            if (nombreAlumno[i].equals(nombre)){
+                return edad[i];
+            }
+        }
+        System.out.println("desconocido");
+        return 0;
+    }
         public static void main(String[] args){
+        
         carga(5);
         visualizar();
         System.out.println("esta es la media " + getMedia());
         System.out.println(getMayor());
         System.out.println("su edad es " + edad[getMayor()]);
+        System.out.println(Arrays.toString(nombreAlumno));
+        System.out.println(getEdad("andrews"));
         
     }
 // falta hacer la parte que este relacionado la edad con los nombres
