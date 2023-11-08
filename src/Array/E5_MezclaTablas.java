@@ -3,7 +3,7 @@ package Array;
 import java.util.Arrays;
 
 public class E5_MezclaTablas {
-                        
+
     static int[] tablaA = {1,2,3,4,5,6,7,8,9,10,11,12};
     static int[] tablaB = {13,14,15,16,17,18,19,20,21,22,23,24};
     static int[] tablaC = new int[24];
@@ -46,9 +46,7 @@ public class E5_MezclaTablas {
 
 
             }
-        }
-    
-      
+        }  
  
         // [1, 2, 3, 13, 14, 15, 4, 5, 6, 16, 17, 18, 7, 8, 9, 19, 20, 21, 10, 11, 12, 22, 23, 24]
     public static void main(String[] args){
