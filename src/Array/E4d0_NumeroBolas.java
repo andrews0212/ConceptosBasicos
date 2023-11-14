@@ -15,13 +15,9 @@ public class E4d0_NumeroBolas {
        
         for (int i = 0 ; i <= n; i++){
             bolaRandom = r.nextInt(10) + 1;
-            for (int b = 0; b < bolas.length; b++) {
-                
-                if ((bolaRandom) == bolas[b] ){
-                    contador[b] +=1;
-                }
+             contador[bolaRandom - 1] +=1;
+            
             }
-        }
 
     }
 
@@ -56,7 +52,6 @@ public class E4d0_NumeroBolas {
     System.out.println(Arrays.toString(contador));
     System.out.println("El numeor de bola que mas se repite es " + MayorBolas(contador, bolas));
     System.out.println("El numero de bola que menos se repite es " + MenorBolas(contador, bolas));
-
-   
-    }
+    
+}
 }

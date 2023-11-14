@@ -10,12 +10,15 @@ public class E00_AlumnosEdades {
     static String nombreAlumno[];
     static int nAlumno;
     static Random r = new Random();
+   
     /*
     * 
     * 
     * 
     * 
     */
+
+
     static void carga(int n){
         nAlumno = n;
         edad = new int[n];
@@ -47,7 +50,8 @@ public class E00_AlumnosEdades {
         return (double) suma / edad.length;
        
     }
-   /*  static int getMayorEdad(){
+   /*  
+        static int getMayorEdad(){
         int mayor;
         mayor = 0;
         for (int e : edad) {
@@ -57,10 +61,8 @@ public class E00_AlumnosEdades {
             if (mayor == edad[i]){
                 System.out.println("el alumno mayor de edad es " + (i+ 1));
             }
-        }
-       
+        }   
         return mayor;
-
     }*/
     
 
