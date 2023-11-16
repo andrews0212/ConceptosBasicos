@@ -1,6 +1,7 @@
 package Array;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Random;
 
 public class E7d1_Temperaturas {
@@ -83,15 +84,45 @@ public class E7d1_Temperaturas {
         }
         return false;
     }
+    // metodo mio 
+    static void ordenacio(int[] temp) {
+    	int menor;
+    	int t;
+    	for (int j = 0; j < temp.length - 1; j++) {
+    	menor = j;
+    	for (int i = j + 1; i < temp.length; i++) {
+    		if (temp[i] < temp[menor]) {
+    			menor = i;
+    		}
+    				
+    	}
+    	t = temp[j];
+    	temp[j] = temp[menor];
+    	temp[menor] = t;
+    	}
+    }
+    // tercera parte
+    
+    static void llenar(int[] array) {
+    	Random numeroAleatorio = new Random();
+    	for (int i = 0 ; i < array.length; i++) {
+    		if (i == 0 || i == 1 || i == 2 || i == 11 || i == 10) {
+    			array[i] = numeroAleatorio.nextInt(-10, 20);
+    			
+    		} else {
+    			array[i] = numeroAleatorio.nextInt(10, 40);
+    		}
+    	}
+    }
+    static void meses(int[] array) {
+    	for (int i = 0 ; i < array.length; i++) {
+    		
+    	}
+    }
+    
     public static void main(String[] args) {
-        llenarArray(temperaturasMeses);
-        ContenidoArrray(temperaturasMeses);
-        ContenidoArrrayInv(temperaturasMeses);
-        System.out.println("La media de la temperatura es de " + calcularMedia(temperaturasMeses));
-        getMayortemperatura(temperaturasMeses);
-        System.out.println(TemperaturaMayor(temperaturasMeses));
-        System.out.println(temperaturaMenor(temperaturasMeses));
-        System.out.println(repetidas(temperaturasMeses));
+        llenar(temperaturasMeses);
+        System.out.println(Arrays.toString(temperaturasMeses));
     }
 
 }
