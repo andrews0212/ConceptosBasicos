@@ -16,6 +16,23 @@ public class inserción {
             data[j + 1 ] = aux;
         }
     }
+    static void quicksort(int[] array) {
+    	int izq;
+    	int der;
+    	int piv;
+    	piv = array[0];
+    	der = array.length;
+    	izq = 1;
+    	while(array[izq] < piv) {
+    		izq++;
+    	}
+    	while(array[der] > piv) {
+    		der++;
+    	}
+    	if (array[izq] > piv) {
+    		
+    	}
+    }
     public static void main(String[] args) {
         int[] vals = {20,1,2};
         ordenamiento(vals);        

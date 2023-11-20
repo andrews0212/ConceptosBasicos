@@ -117,8 +117,9 @@ public class D1d8_Empresa2 {
         caja = new int[MES][DIA]; // Inicializa el array caja
         llenar(caja);
         mostrar(caja);
-        ordenamiento();
-        mostrar(caja);
+        diaMesMejor();
+        
+      
        
     }
 }
